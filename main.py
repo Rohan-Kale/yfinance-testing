@@ -33,30 +33,12 @@ class GraphData:
         msft_data = self.filter_data(self.msft_data)
         nvda_data = self.filter_data(self.nvda_data)
 
-        fig, axes = ppl.subplots(nrows=3, ncols=1, figsize=(12, 10), sharex=True)
+        axes = ppl.subplots(nrows=3, ncols=1, figsize=(12, 10), sharex=True)
         
-        mpf.plot(
-            aapl_data,
-            type='candle',
-            ax=axes[0],
-            style='yahoo',
-            axtitle='AAPL Candlestick Chart',
-        )
-        mpf.plot(
-            msft_data,
-            type='candle',
-            ax=axes[1],
-            style='yahoo',
-            axtitle='MSFT Candlestick Chart',
-        )
-        mpf.plot(
-            nvda_data,
-            type='candle',
-            ax=axes[2],
-            style='yahoo',
-            axtitle='NVDA Candlestick Chart',
-        )
-        
+        mpf.plot(aapl_data, type='candle', ax=axes[0], style='yahoo', axtitle='AAPL')
+        mpf.plot(msft_data, type='candle', ax=axes[1], style='yahoo', axtitle='MSFT')
+        mpf.plot(nvda_data, type='candle', ax=axes[2], style='yahoo', axtitle='NVDA')
+
         ppl.tight_layout()
         ppl.show()
 
